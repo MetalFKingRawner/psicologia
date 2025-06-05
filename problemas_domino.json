@@ -1,0 +1,2029 @@
+{
+  "test": "Test de Dominó D-48",
+  "tiempo_limite": 25,
+  "instrucciones": "Complete la secuencia seleccionando la ficha que falta...",
+  "problemas": [
+    {
+      "numero": 1,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [2, 4]
+    },
+    {
+      "numero": 2,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [6, 1]
+    },
+    {
+      "numero": 3,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [3, 5]
+    },
+    {
+      "numero": 4,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 0
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 0
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 1,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 0,
+          "inferior": 0
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [0, 2]
+    },
+    {
+      "numero": 5,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [4, 1]
+    },
+    {
+      "numero": 6,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 0,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [3, 6]
+    },
+    {
+      "numero": 7,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [5, 2]
+    },
+    {
+      "numero": 8,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 0,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 0,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [0, 4]
+    },
+    {
+      "numero": 9,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [2, 6]
+    },
+    {
+      "numero": 10,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 5,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [3, 3]
+    },
+    {
+      "numero": 11,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 1
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [4, 0]
+    },
+    {
+      "numero": 12,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [5, 1]
+    },
+    {
+      "numero": 13,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [2, 3]
+    },
+    {
+      "numero": 14,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 0,
+          "inferior": 1
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [5, 6]
+    },
+    {
+      "numero": 15,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 0
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [1, 4]
+    },
+    {
+      "numero": 16,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 4
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [2, 5]
+    },
+    {
+      "numero": 17,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 0
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [6, 0]
+    },
+    {
+      "numero": 18,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [1, 4]
+    },
+    {
+      "numero": 19,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [2, 2]
+    },
+    {
+      "numero": 20,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 6,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [1, 5]
+    },
+    {
+      "numero": 21,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 0,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 1,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [0, 4]
+    },
+    {
+      "numero": 22,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [6, 3]
+    },
+    {
+      "numero": 23,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 0
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [2, 1]
+    },
+    {
+      "numero": 24,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [3, 5]
+    },
+    {
+      "numero": 35,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 3,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [6, 2]
+    },
+    {
+      "numero": 36,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [3, 5]
+    },
+    {
+      "numero": 41,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 0,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 5
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 0,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [5, 1]
+    },
+    {
+      "numero": 42,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 1
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 1,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 1,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 4,
+          "inferior": 5
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [0, 6]
+    },
+    {
+      "numero": 43,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 0,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [4, 6]
+    },
+    {
+      "numero": 44,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 0,
+          "inferior": 6
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 0
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 6,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [3, 0]
+    },
+    {
+      "numero": 45,
+      "tipo": "MATRIZ",
+      "matriz_filas": 2,
+      "matriz_columnas": 4,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 4,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 1,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 3,
+          "superior": 3,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 4
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 6
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 0,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 3,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [0, 5]
+    },
+    {
+      "numero": 46,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 2
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 1
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 1,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 3
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 2,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 3,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [5, 6]
+    },
+    {
+      "numero": 47,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 5
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 1,
+          "inferior": 1
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 3,
+          "inferior": 3
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 2,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 4
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 6
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [2, 2]
+    },
+    {
+      "numero": 48,
+      "tipo": "MATRIZ",
+      "matriz_filas": 3,
+      "matriz_columnas": 3,
+      "fichas": [
+        {
+          "fila": 0,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 3
+        },
+        {
+          "fila": 0,
+          "columna": 1,
+          "superior": 0,
+          "inferior": 1
+        },
+        {
+          "fila": 0,
+          "columna": 2,
+          "superior": 6,
+          "inferior": 1
+        },
+        {
+          "fila": 1,
+          "columna": 0,
+          "superior": 1,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 1,
+          "superior": 6,
+          "inferior": 2
+        },
+        {
+          "fila": 1,
+          "columna": 2,
+          "superior": 4,
+          "inferior": 1
+        },
+        {
+          "fila": 2,
+          "columna": 0,
+          "superior": 5,
+          "inferior": 0
+        },
+        {
+          "fila": 2,
+          "columna": 1,
+          "superior": 5,
+          "inferior": 2
+        },
+        {
+          "fila": 2,
+          "columna": 2,
+          "superior": null,
+          "inferior": null
+        }
+      ],
+      "respuesta": [1, 3]
+    }
+  ]
+}
