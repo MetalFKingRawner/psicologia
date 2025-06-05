@@ -19,17 +19,20 @@ from django.views.decorators.http import require_http_methods
 logger = logging.getLogger(__name__)
 
 def inicio_test_valores(request):
-    test = TestValores.objects.get(nombre="Test de Valores de Allport")
-    primera_parte = ParteTest.objects.get(test=test, tipo='PRIMERA')
-    
+    #test = TestValores.objects.get(nombre="Test de Valores de Allport")
+    #primera_parte = ParteTest.objects.get(test=test, tipo='PRIMERA')
+    test = get_object_or_404(TestValores, nombre="Test de Valores de Allport")
+    primera_parte = get_object_or_404(ParteTest, test=test, tipo='PRIMERA')
     return render(request, 'tests/inicio_test_valores.html', {
         'test': test,
         'primera_parte': primera_parte
     })
 
 def inicio_segundo_test_valores(request):
-    test = TestValores.objects.get(nombre="Test de Valores de Allport")
-    segunda_parte = ParteTest.objects.get(test=test, tipo='SEGUNDA')
+    #test = TestValores.objects.get(nombre="Test de Valores de Allport")
+    #segunda_parte = ParteTest.objects.get(test=test, tipo='SEGUNDA')
+    test = get_object_or_404(TestValores, nombre="Test de Valores de Allport")
+    segunda_parte = get_object_or_404(ParteTest, test=test, tipo='SEGUNDA')
     
     return render(request, 'tests/inicio_segunda_parte_valores.html', {
         'test': test,
@@ -37,8 +40,10 @@ def inicio_segundo_test_valores(request):
     })
 
 def primera_parte_valores(request):
-    test = TestValores.objects.get(nombre="Test de Valores de Allport")
-    primera_parte = ParteTest.objects.get(test=test, tipo='PRIMERA')
+    #test = TestValores.objects.get(nombre="Test de Valores de Allport")
+    #primera_parte = ParteTest.objects.get(test=test, tipo='PRIMERA')
+    test = get_object_or_404(TestValores, nombre="Test de Valores de Allport")
+    primera_parte = get_object_or_404(ParteTest, test=test, tipo='PRIMERA')
     preguntas = PreguntaValores.objects.filter(parte=primera_parte).order_by('id')
     
     if request.method == 'POST':
@@ -64,8 +69,10 @@ def primera_parte_valores(request):
     })
 
 def segunda_parte_valores(request):
-    test = TestValores.objects.get(nombre="Test de Valores de Allport")
-    segunda_parte = ParteTest.objects.get(test=test, tipo='SEGUNDA')
+    #test = TestValores.objects.get(nombre="Test de Valores de Allport")
+    #segunda_parte = ParteTest.objects.get(test=test, tipo='SEGUNDA')
+    test = get_object_or_404(TestValores, nombre="Test de Valores de Allport")
+    segunda_parte = get_object_or_404(ParteTest, test=test, tipo='SEGUNDA')
     preguntas = PreguntaValores.objects.filter(parte=segunda_parte).order_by('id')
     
     if request.method == 'POST':
@@ -551,7 +558,8 @@ def generar_pdf_valores(request, resultado_id):
     return response
 
 def inicio_domino(request):
-    test = TestDomino.objects.get(nombre="Test de Dominó D-48")
+    test = get_object_or_404(TestDomino, nombre="Test de Dominó D-48")
+    #test = TestDomino.objects.get(nombre="Test de Dominó D-48")
     return render(request, 'tests/inicio_domino.html', {
         'test': test
     })
