@@ -21,8 +21,14 @@ logger = logging.getLogger(__name__)
 def inicio_test_valores(request):
     #test = TestValores.objects.get(nombre="Test de Valores de Allport")
     #primera_parte = ParteTest.objects.get(test=test, tipo='PRIMERA')
-    test = get_object_or_404(TestValores, nombre="Test de Valores de Allport")
-    primera_parte = get_object_or_404(ParteTest, test=test, tipo='PRIMERA')
+    try:
+        test = TestValores.objects.get(nombre="Test de Valores de Allport")
+        primera_parte = ParteTest.objects.get(test=test, tipo='PRIMERA')
+    except (TestValores.DoesNotExist, ParteTest.DoesNotExist):
+        # Manejo de error más amigable
+        return render(request, 'tests/error.html', {
+            'message': 'Configuración de prueba no encontrada'
+        })
     return render(request, 'tests/inicio_test_valores.html', {
         'test': test,
         'primera_parte': primera_parte
@@ -98,7 +104,7 @@ def segunda_parte_valores(request):
 
 def calcular_resultados_valores(request):
     if not request.user.is_authenticated:
-        return redirect('login')
+        return redirect('core_login')
     
     try:
         # Cargar estructura del test desde JSON
