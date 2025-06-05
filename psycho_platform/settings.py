@@ -153,6 +153,20 @@ AUTH_USER_MODEL = 'users.CustomUser'  # Agrega esto al final del archivo
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = 'home'  # Redirige al nombre de URL 'home' después de login
 LOGOUT_REDIRECT_URL = 'home'  # Redirige al home después de logout
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
+}
 LOGIN_URL = 'core_login'      # Nombre único para la URL de login
 # Añade al final del archivo
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # ✅
