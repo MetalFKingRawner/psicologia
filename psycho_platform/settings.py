@@ -47,7 +47,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware',  # ← WhiteNoise aquí
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,9 +60,7 @@ ROOT_URLCONF = 'psycho_platform.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates', # ¡Esta línea es clave y ahora única!
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,9 +70,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
         },
-        #'DIRS': [
-        #    BASE_DIR / 'templates',  # ¡Esta línea es clave!
-        #],
+        'DIRS': [
+            BASE_DIR / 'templates',  # ¡Esta línea es clave!
+        ],
     },
 ]
 
@@ -141,8 +138,6 @@ USE_TZ = True
 STATIC_URL = 'psycho_platform/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'psycho_platform/static']
-# WhiteNoise: agrega compresión y cache busting
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
