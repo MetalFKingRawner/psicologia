@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent  # 3 niveles hacia arriba
@@ -25,9 +26,9 @@ print("Templates path:", BASE_DIR / 'templates')
 SECRET_KEY = 'django-insecure-76l$=a@sb41v+p3*w69w(ix-c5zjgit)@#!r%pwb=j98vs4(vm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,15 +82,22 @@ WSGI_APPLICATION = 'psycho_platform.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'psyco',
+#        'USER': 'postgres',
+#        'PASSWORD': 'hangar81',
+#        'HOST': 'localhost',  # O la dirección de tu servidor de base de datos
+#        'PORT': '5432',       # Puerto por defecto de PostgreSQL
+#    }
+#}
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'psyco',
-        'USER': 'postgres',
-        'PASSWORD': 'hangar81',
-        'HOST': 'localhost',  # O la dirección de tu servidor de base de datos
-        'PORT': '5432',       # Puerto por defecto de PostgreSQL
-    }
+    'default': dj_database_url.config(
+        default=f"postgresql://psyco_owner:npg_A8OuEWHG2Uto@ep-mute-forest-a5ic3ly1-pooler.us-east-2.aws.neon.tech/psyco",  # URL local para pruebas
+        conn_max_age=600,
+        ssl_require=True  # Neon y Railway pueden requerir SSL
+    )
 }
 
 
@@ -128,7 +136,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'psycho_platform/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'psycho_platform/static']
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
