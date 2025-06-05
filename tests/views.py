@@ -619,6 +619,8 @@ def detalle_problema_domino(request, problema_id):
         'problema': problema,
         'matriz': matriz
     })
+def test_view(request):
+    return HttpResponse("¡Vista de prueba funciona!")
 
 #def resultados_valores(request):
     # Esta vista la implementaremos después de capturar las respuestas
