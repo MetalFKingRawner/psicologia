@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ AÑADE ESTO
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -135,9 +136,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'psycho_platform/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'psycho_platform/static']
+# Configuración CORRECTA de static
+STATIC_URL = '/static/'  # Con "/" inicial
+STATIC_ROOT = BASE_DIR / 'staticfiles'  #
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Nueva carpeta unificada
 
 
 MEDIA_URL = '/media/'
@@ -152,3 +154,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = 'home'  # Redirige al nombre de URL 'home' después de login
 LOGOUT_REDIRECT_URL = 'home'  # Redirige al home después de logout
 LOGIN_URL = 'core_login'      # Nombre único para la URL de login
+# Añade al final del archivo
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # ✅
