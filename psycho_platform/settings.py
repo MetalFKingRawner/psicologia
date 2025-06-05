@@ -144,10 +144,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Carpeta donde collectstatic volcará todos los archivos estáticos en producción
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Carpeta(s) con tus archivos estáticos en desarrollo
-STATICFILES_DIRS = [BASE_DIR / 'psycho_platform' / 'static']
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'psycho_platform', 'static')]
 
 # WhiteNoise: agrega compresión y cache busting
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
