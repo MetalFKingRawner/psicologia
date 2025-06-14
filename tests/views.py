@@ -4,8 +4,13 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django.db import transaction
 from .models import TestValores, ParteTest, PreguntaValores, OpcionValores, ResultadoValores
-from .models import TestDomino, ProblemaDomino
+from .models import TestDomino, ProblemaDomino, ResultadoDomino
 from users.models import CustomUser
+from django.utils import timezone as django_timezone
+from django.utils import timezone
+from datetime import date, datetime
+from django.utils import timezone as django_timezone
+from django.core.serializers.json import DjangoJSONEncoder
 from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
@@ -571,33 +576,34 @@ def inicio_domino(request):
     })
 
 def test_domino(request):
-    # Crear lista de números de problemas matriciales
-    numeros_problemas = list(range(1, 25))  # Problemas 1-24
-    numeros_problemas.extend([35, 36])      # Problemas 35-36
-    numeros_problemas.extend(range(41, 49)) # Problemas 41-48
-
-    # Obtener problemas y preparar sus matrices
+    # Incluir TODOS los problemas (1-48)
+    # Registrar tiempo de inicio como timestamp (formato serializable)
+    request.session['tiempo_inicio_domino'] = timezone.now().timestamp()
+    numeros_problemas = list(range(1, 49))
+    
     problemas = ProblemaDomino.objects.filter(
-        tipo='MATRIZ',
         numero__in=numeros_problemas
     ).order_by('numero')
     
     problemas_preparados = []
     for problema in problemas:
-        # Crear matriz vacía
-        matriz = [[None for _ in range(problema.matriz_columnas)] 
-                  for _ in range(problema.matriz_filas)]
+        preparado = {'obj': problema, 'tipo': problema.tipo}
         
-        # Llenar matriz con fichas
-        for ficha_data in problema.fichas:
-            fila = ficha_data['fila']
-            columna = ficha_data['columna']
-            matriz[fila][columna] = ficha_data
+        if problema.tipo == 'MATRIZ':
+            # Preparar matriz como antes
+            matriz = [[None] * problema.matriz_columnas for _ in range(problema.matriz_filas)]
+            for ficha_data in problema.fichas:
+                fila = ficha_data['fila']
+                columna = ficha_data['columna']
+                matriz[fila][columna] = ficha_data
+            preparado['matriz'] = matriz
         
-        problemas_preparados.append({
-            'obj': problema,
-            'matriz': matriz
-        })
+        elif problema.tipo in ['FLOR', 'ESPIRAL']:
+            # Pasar configuración especial
+            preparado['config'] = problema.configuracion_extra
+            preparado['fichas'] = problema.fichas
+        
+        problemas_preparados.append(preparado)
     
     return render(request, 'tests/test_domino.html', {
         'problemas_preparados': problemas_preparados
@@ -619,6 +625,163 @@ def detalle_problema_domino(request, problema_id):
         'problema': problema,
         'matriz': matriz
     })
+
+def calcular_resultados_domino(request):
+    if request.method == 'POST':
+        tiempo_inicio_ts = request.session.get('tiempo_inicio_domino')
+        if tiempo_inicio_ts:
+            # Convertir timestamp a datetime sin zona horaria
+            tiempo_inicio = datetime.fromtimestamp(tiempo_inicio_ts)
+            # Convertir a datetime consciente usando la zona horaria de Django
+            tiempo_inicio = django_timezone.make_aware(tiempo_inicio)
+            tiempo_utilizado = (django_timezone.now() - tiempo_inicio).total_seconds()
+        else:
+            tiempo_utilizado = 0
+
+        # Obtener fecha de nacimiento del usuario
+        fecha_nacimiento = request.user.date_of_birth
+        
+        # Determinar grupo de edad
+        grupo_edad = 'general'  # Por defecto: población general
+        
+        if fecha_nacimiento:
+            # Calcular edad exacta
+            hoy = date.today()
+            edad = hoy.year - fecha_nacimiento.year - ((hoy.month, hoy.day) < (fecha_nacimiento.month, fecha_nacimiento.day))
+            
+            # Asignar grupo de edad según rangos del PDF
+            if 12 <= edad <= 13:
+                grupo_edad = '12-13'
+            elif 14 <= edad <= 15:
+                grupo_edad = '14-15'
+            elif 16 <= edad <= 17:
+                grupo_edad = '16-17'
+            elif 18 <= edad <= 30:
+                grupo_edad = '18-30'
+        baremo_edad ={}
+        # Seleccionar baremo adecuado según grupo de edad
+        if grupo_edad == '12-13':
+            baremo_edad = {
+                42: 99, 38: 95, 35: 90, 32: 80, 31: 75, 30: 70, 
+                29: 60, 27: 50, 25: 40, 22: 30, 21: 25, 20: 20,
+                14: 10, 9: 5, 4: 1
+            }
+        elif grupo_edad == '14-15':
+            baremo_edad = {
+                43: 99, 39: 95, 37: 90, 33: 80, 32: 75, 31: 70,
+                30: 60, 28: 50, 26: 40, 23: 30, 22: 25, 21: 20,
+                15: 10, 11: 5, 5: 1
+            }
+        elif grupo_edad == '16-17':
+            baremo_edad = {
+                44: 99, 41: 95, 39: 90, 35: 80, 34: 75, 33: 70,
+                32: 60, 29: 50, 27: 40, 24: 30, 23: 25, 22: 20,
+                16: 10, 12: 5, 6: 1
+            }
+        elif grupo_edad == '18-30':
+            baremo_edad = {
+                45: 99, 41: 95, 40: 90, 37: 80, 36: 75, 35: 70,
+                33: 60, 31: 50, 29: 40, 26: 30, 25: 25, 24: 20,
+                20: 10, 16: 5, 8: 1
+            }
+        else:  # Población general
+            baremo_edad = {
+                44: 99, 40: 95, 37: 90, 35: 80, 34: 75, 33: 70, 
+                31: 60, 29: 50, 27: 40, 25: 30, 23: 25, 22: 20,
+                17: 10, 12: 5, 5: 1
+            }
+
+        # Inicializar respuestas_usuario como diccionario vacío
+        respuestas_usuario = {}
+        
+        # 2. Obtener todas las respuestas del formulario
+        problemas = ProblemaDomino.objects.filter(numero__in=range(1, 49))
+        correctas = 0
+        intentadas = 0
+        
+        for problema in problemas:
+            key_sup = f'problema_{problema.id}_superior'
+            key_inf = f'problema_{problema.id}_inferior'
+            user_sup = request.POST.get(key_sup, '')
+            user_inf = request.POST.get(key_inf, '')
+            # Obtener siempre la respuesta correcta
+            correcta_sup, correcta_inf = problema.respuesta
+            es_correcta = False
+            
+            # Considerar solo problemas con ambas respuestas
+            if user_sup.isdigit() and user_inf.isdigit():
+                intentadas += 1
+                user_sup = int(user_sup)
+                user_inf = int(user_inf)
+                
+                # Verificar si es correcta (incluyendo posición exacta)
+                if user_sup == correcta_sup and user_inf == correcta_inf:
+                    correctas += 1
+                    es_correcta = True
+            
+           # Almacenar respuesta para este problema
+            respuestas_usuario[problema.numero] = {
+                'respuesta_usuario': f"{user_sup}/{user_inf}",
+                'respuesta_correcta': f"{correcta_sup}/{correcta_inf}",
+                'correcta': es_correcta
+            }
+
+        # 3. Calcular puntuación y eficiencia
+        puntuacion = correctas
+        eficiencia = (correctas / intentadas * 100) if intentadas > 0 else 0
+        
+        # 4. Determinar percentil (según baremo del PDF)
+        #baremo_general = {
+        #    44: 99, 40: 95, 37: 90, 35: 80, 34: 75, 33: 70, 
+        #    31: 60, 29: 50, 27: 40, 25: 30, 23: 25, 22: 20,
+        #    17: 10, 12: 5, 5: 1
+        #}
+        
+        # Determinar percentil usando el baremo seleccionado
+        percentil = 0
+        for puntos, perc in baremo_edad.items():
+            if puntuacion >= puntos:
+                percentil = perc
+                break
+        
+        # 5. Determinar diagnóstico (según tabla del PDF)
+        if percentil >= 95:
+            diagnostico = "Superior"
+        elif percentil >= 75:
+            diagnostico = "Superior a término medio"
+        elif percentil >= 50:
+            diagnostico = "Término medio"
+        elif percentil >= 25:
+            diagnostico = "Inferior al término medio"
+        else:
+            diagnostico = "Deficiente"
+        
+        # 6. Guardar resultados
+        test = TestDomino.objects.get(nombre="Test de Dominó D-48")
+        resultado = ResultadoDomino(
+            usuario=request.user,
+            test=test,
+            fecha=timezone.now(),
+            respuestas=respuestas_usuario,
+            puntuacion=puntuacion,
+            percentil=percentil,
+            tiempo_utilizado=tiempo_utilizado,
+            eficiencia=eficiencia,
+            diagnostico=diagnostico,
+            baremo=baremo_edad,
+            grupo_edad=grupo_edad
+        )
+        resultado.save()
+        
+        return redirect('resultados_domino', resultado_id=resultado.id)
+    
+    return redirect('test_domino')
+
+def resultados_domino(request, resultado_id):
+    resultado = get_object_or_404(ResultadoDomino, id=resultado_id)
+    return render(request, 'tests/resultados_domino.html', {'resultado': resultado})
+
+
 def test_view(request):
     return HttpResponse("¡Vista de prueba funciona!")
 
