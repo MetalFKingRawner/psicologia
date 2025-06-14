@@ -4,7 +4,7 @@
 {% block title %}Test de Dominó D-48{% endblock %}
 
 {% block content %}
-<form method="post" action="{% url 'test_domino' %}" id="test-domino-form">
+<form method="post" action="{% url 'calcular_resultados_domino' %}" id="test-domino-form">
   {% csrf_token %}
   <div class="container my-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
@@ -28,6 +28,8 @@
             <h5 class="mb-0">Problema {{ problema.obj.numero }}</h5>
           </div>
           <div class="card-body">
+            <!-- CASO MATRIZ -->
+            {% if problema.tipo == 'MATRIZ' %}
             <div class="domino-matrix mb-3" 
                  style="display: grid; 
                         grid-template-columns: repeat({{ problema.obj.matriz_columnas }}, 1fr);
@@ -47,7 +49,7 @@
                         </div>
                       {% else %}
                         <input class="domino-input" 
-                               name="problema_{{ problema.obj.id }}_inferior"
+                               name="problema_{{ problema.obj.id }}_superior"
                                maxlength="1"
                                placeholder=""
                                required
@@ -75,6 +77,81 @@
                 {% endfor %}
               {% endfor %}
             </div>
+            <!-- FIN CASO MATRIZ -->
+            <!-- Caso flor-->
+            {% elif problema.tipo == 'FLOR' %}
+            <div class="domino-flor-container" 
+                data-count="{{ problema.config.num_fichas_perimetro }}"
+                style="position: relative;  margin: 0 auto;">
+              {% for ficha in problema.fichas %}
+              <div class="domino-tile {% if ficha.posicion == 'respuesta' %}respuestano-hover{% endif %}"
+                  style="transform: translate({{ ficha.coordenadas.x }}px, {{ ficha.coordenadas.y }}px) rotate({{ ficha.rotacion }}deg);">
+                <!-- Mitad superior -->
+                <div class="domino-half">
+                  {% if ficha.superior is not None %}
+                    <div class="dots-{{ ficha.superior }}">
+                      {% for i in ficha.superior|times %}
+                      <div class="dot dot-{{ forloop.counter }}"></div>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <input class="domino-input" name="problema_{{ problema.obj.id }}_superior">
+                  {% endif %}
+                </div>
+                
+                <!-- Mitad inferior -->
+                <div class="domino-half">
+                  {% if ficha.inferior is not None %}
+                    <div class="dots-{{ ficha.inferior }}">
+                      {% for i in ficha.inferior|times %}
+                      <div class="dot dot-{{ forloop.counter }}"></div>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <input class="domino-input" name="problema_{{ problema.obj.id }}_inferior">
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <!-- FIN CASO FLOR -->
+            <!-- CASO ESPIRAL -->
+            {% elif problema.tipo == 'ESPIRAL' %}
+            <div class="domino-espiral-container"
+                style="position: relative; margin: 0 auto;">
+              {% for ficha in problema.fichas %}
+              <div class="domino-tile {% if ficha.posicion == 'respuesta' %}respuestano-hover{% endif %}"
+                  style="transform: translate({{ ficha.coordenadas.x }}px, {{ ficha.coordenadas.y }}px) rotate({{ ficha.rotacion }}deg);">
+                <!-- Mitad superior -->
+                <div class="domino-half">
+                  {% if ficha.superior is not None %}
+                    <div class="dots-{{ ficha.superior }}">
+                      {% for i in ficha.superior|times %}
+                      <div class="dot dot-{{ forloop.counter }}"></div>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <input class="domino-input" name="problema_{{ problema.obj.id }}_superior">
+                  {% endif %}
+                </div>
+                
+                <!-- Mitad inferior -->
+                <div class="domino-half">
+                  {% if ficha.inferior is not None %}
+                    <div class="dots-{{ ficha.inferior }}">
+                      {% for i in ficha.inferior|times %}
+                      <div class="dot dot-{{ forloop.counter }}"></div>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    <input class="domino-input" name="problema_{{ problema.obj.id }}_inferior">
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <!-- FIN CASO ESPIRAL -->
+            {% endif %}
           </div>
         </div>
       </div>
@@ -88,6 +165,13 @@
 </form>
 
 <style>
+
+  .domino-tile.respuestano-hover:hover,
+  .domino-tile.no-hover:active {
+      background: inherit;
+      transform: none;  /* O simplemente elimina esta línea y dejará el inline intacto */
+      box-shadow: none;
+  }
   .domino-tile {
     background: linear-gradient(145deg, #e3fcec, #f1eafc);
     border: 2px solid #d1c1e0;
@@ -293,6 +377,190 @@
     font-size: 0.9rem;
     font-weight: 500;
   }
+
+  /*Estilos para dominó en flor */
+  .domino-flor-container{
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            aspect-ratio: 1 / 1;    /* mantiene un contenedor cuadrado */
+            margin: 0 auto;  
+        }
+  .domino-flor-container .domino-tile {
+    --tile-width: 65px;
+    --tile-height: 130px;
+    background: linear-gradient(145deg, #e3fcec, #f1eafc);
+    border: 2px solid #d1c1e0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: absolute;
+            transform-origin: center;
+  }
+  
+  /* --- POSICIONES PARA 5 FICHAS (Ref: image_1496e9.png) --- */
+        .count-5 .tile-1 { transform: translate(-80px, -90px) rotate(-40deg); }
+        .count-5 .tile-2 { transform: translate(80px, -90px) rotate(40deg); }
+        .count-5 .tile-3 { transform: translate(125px, 50px) rotate(105deg); }
+        .count-5 .tile-4 { transform: translate(-125px, 50px) rotate(-105deg); }
+        .count-5 .respuesta { transform: translateY(140px); }
+        /* Oculta fichas no usadas */
+        .count-5 .tile-5, .count-5 .tile-6, .count-5 .tile-7 { display: none; }
+
+
+        /* --- POSICIONES PARA 6 FICHAS (Ref: image_149999.png) --- */
+        .count-6 .tile-1 { transform: translateY(-135px) rotate(0deg); }
+        .count-6 .tile-2 { transform: translate(105px, -65px) rotate(55deg); }
+        .count-6 .tile-3 { transform: translate(105px, 70px) rotate(125deg); }
+        .count-6 .tile-4 { transform: translate(-105px, 70px) rotate(-125deg); }
+        .count-6 .tile-5 { transform: translate(-105px, -65px) rotate(-55deg); }
+        .count-6 .respuesta { transform: translateY(140px); }
+        /* Oculta fichas no usadas */
+        .count-6 .tile-6, .count-6 .tile-7 { display: none; }
+
+
+        /* --- POSICIONES PARA 7 FICHAS (Ref: image_1499f6.png) --- */
+        .count-7 .tile-1 { transform: translate(-70px, -145px) rotate(-25deg); }
+        .count-7 .tile-2 { transform: translate(70px, -145px) rotate(25deg); }
+        .count-7 .tile-3 { transform: translate(155px, -25px) rotate(90deg); }
+        .count-7 .tile-4 { transform: translate(100px, 95px) rotate(145deg); }
+        .count-7 .tile-5 { transform: translate(-100px, 95px) rotate(-145deg); }
+        .count-7 .tile-6 { transform: translate(-155px, -25px) rotate(-90deg); }
+        .count-7 .respuesta { transform: translateY(140px); }
+        /* Oculta fichas no usadas */
+        .count-7 .tile-7 { display: none; }
+
+    /* Anular hover/active para LA SOLA ficha vacía */
+        .domino-flor-container .domino-tile.respuesta:hover {
+            transform: none !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+        }
+        .domino-flor-container .domino-tile.respuesta:active {
+            transform: none !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+        }
+    .domino-flor-container .domino-tile.respuestano-hover {
+    animation: pulse 2s infinite;
+  }
+
+  /* Estilos para contenedor espiral */
+  .domino-espiral-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      aspect-ratio: 6 / 5;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+  }
+
+  /* Estilos base para fichas */
+  .domino-espiral-container .domino-tile {
+      background: linear-gradient(145deg, #e3fcec, #f1eafc);
+      border: 2px solid #d1c1e0;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      position: absolute;
+      transform-origin: center;
+  }
+
+  /* Mitades de la ficha */
+  .domino-espiral-container .domino-half {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+  }
+
+  .domino-espiral-container .domino-half:first-child {
+      border-bottom: 1px solid #bababa;
+  }
+  .domino-espiral-container .dot {
+    position: absolute;
+    background-color: #333;
+    border-radius: 50%;
+  }
+
+  /* Tamaños y posiciones de las fichas en espiral */
+  .domino-espiral-container .domino-tile:nth-child(1) { 
+        width: 32px; 
+        height: 65px;
+        transform: translate(10px, -20px);
+    }
+    .domino-espiral-container .domino-tile:nth-child(1) .dot { width: 4px; height: 4px; }
+    
+    .domino-espiral-container .domino-tile:nth-child(2) { 
+        width: 37px; 
+        height: 72px;
+        transform: translate(-40px, 40px) rotate(80deg);
+    }
+    .domino-espiral-container .domino-tile:nth-child(2) .dot { width: 4.5px; height: 4.5px; }
+    
+    .domino-espiral-container .domino-tile:nth-child(3) { 
+        width: 32px; 
+        height: 65px;
+        transform: translate(-115px, 5px) rotate(155deg);
+    }
+    .domino-espiral-container .domino-tile:nth-child(3) .dot { width: 5px; height: 5px; }
+    
+    .domino-espiral-container .domino-tile:nth-child(4) { 
+        width: 37px; 
+        height: 72px;
+        transform: translate(-110px, -85px) rotate(220deg);
+    }
+    .domino-espiral-container .domino-tile:nth-child(4) .dot { width: 5.5px; height: 5.5px; }
+    
+    .domino-espiral-container .domino-tile:nth-child(5) { 
+        width: 45px; 
+        height: 90px;
+        transform: translate(-10px, -135px) rotate(-90deg);
+    }
+    .domino-espiral-container .domino-tile:nth-child(5) .dot { width: 6px; height: 6px; }
+    
+    .domino-espiral-container .domino-tile:nth-child(6) { 
+        width: 52px; 
+        height: 104px;
+        transform: translate(110px, -70px) rotate(-30deg);
+    }
+    .domino-espiral-container .domino-tile:nth-child(6) .dot { width: 6.5px; height: 6.5px; }
+    
+    /* Para la ficha de respuesta, si es la última */
+    .domino-espiral-container .domino-tile.respuestano-hover { 
+        width: 56px; 
+        height: 112px;
+        transform: translate(120px, 75px) rotate(0deg);
+    }
+
+  /* Estilos para puntos */
+  .domino-espiral-container .dots-1 .dot-1 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-2 .dot-1 { top: 30%; left: 30%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-2 .dot-2 { top: 70%; left: 70%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-3 .dot-1 { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-3 .dot-2 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-3 .dot-3 { top: 75%; left: 75%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-4 .dot-1 { top: 30%; left: 30%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-4 .dot-2 { top: 30%; left: 70%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-4 .dot-3 { top: 70%; left: 30%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-4 .dot-4 { top: 70%; left: 70%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-5 .dot-1 { top: 25%; left: 25%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-5 .dot-2 { top: 25%; left: 75%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-5 .dot-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-5 .dot-4 { top: 75%; left: 25%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-5 .dot-5 { top: 75%; left: 75%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-6 .dot-1 { top: 25%; left: 30%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-6 .dot-2 { top: 25%; left: 70%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-6 .dot-3 { top: 50%; left: 30%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-6 .dot-4 { top: 50%; left: 70%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-6 .dot-5 { top: 75%; left: 30%; transform: translate(-50%, -50%); }
+  .domino-espiral-container .dots-6 .dot-6 { top: 75%; left: 70%; transform: translate(-50%, -50%); }
 </style>
 
 <script>
