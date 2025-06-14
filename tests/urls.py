@@ -14,4 +14,6 @@ urlpatterns = [
     path('domino/test/', views.test_domino, name='test_domino'),
     path('domino/ejercicio/<int:problema_id>/', views.detalle_problema_domino, name='detalle_problema_domino'),
     path('test-simple/', views.test_view, name='test_simple'),
+    path('domino/calcular-resultados/', views.calcular_resultados_domino, name='calcular_resultados_domino'),
+    path('domino/resultados/<int:resultado_id>/', views.resultados_domino, name='resultados_domino'),
 ]
