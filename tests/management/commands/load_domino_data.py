@@ -33,10 +33,12 @@ class Command(BaseCommand):
             # Cargar problemas
             total_problemas = 0
             for problema_data in data['problemas']:
-                # Para problemas no matriciales, establecer filas/columnas como None
-                if problema_data['tipo'] != 'MATRIZ':
-                    problema_data['matriz_filas'] = None
-                    problema_data['matriz_columnas'] = None
+                # Guardar configuraciones especiales
+                configuracion_extra = None
+                if problema_data['tipo'] == 'FLOR':
+                    configuracion_extra = problema_data.get('configuracion_floral')
+                elif problema_data['tipo'] == 'ESPIRAL':
+                    configuracion_extra = problema_data.get('configuracion_espiral')
                 
                 # Crear problema
                 ProblemaDomino.objects.update_or_create(
@@ -48,7 +50,7 @@ class Command(BaseCommand):
                         'matriz_columnas': problema_data.get('matriz_columnas'),
                         'fichas': problema_data['fichas'],
                         'respuesta': problema_data['respuesta'],
-                        'configuracion_extra': None  # Usar si tienes datos adicionales
+                        'configuracion_extra': configuracion_extra  # Nuevo campo
                     }
                 )
                 total_problemas += 1
