@@ -165,6 +165,11 @@ class ResultadoDomino(models.Model):
         default=0, 
         help_text="Tiempo utilizado en segundos"
     )
+    # Nuevos campos para análisis
+    eficiencia = models.FloatField(default=0.0)  # Porcentaje de eficiencia
+    diagnostico = models.CharField(max_length=50, default='')  # Capacidad intelectual
+    baremo = models.JSONField(default=dict)  # Datos de baremación
+    grupo_edad = models.CharField(max_length=20, default='general')
 
     def __str__(self):
         return f"Resultado de {self.usuario} - {self.puntuacion} pts"
