@@ -148,7 +148,7 @@
           "inferior": 2
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -478,7 +478,7 @@
           "inferior": 4
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -604,7 +604,7 @@
           "inferior": 1
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -844,7 +844,7 @@
           "inferior": 0
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -970,7 +970,7 @@
           "inferior": 0
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -1096,7 +1096,7 @@
           "inferior": 3
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -1222,7 +1222,7 @@
           "inferior": 4
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -1348,7 +1348,7 @@
           "inferior": 6
         },
         {
-          "fila": 1,
+          "fila": 2,
           "columna": 2,
           "superior": null,
           "inferior": null
@@ -1418,6 +1418,922 @@
         }
       ],
       "respuesta": [3, 5]
+    },
+    {
+      "numero": 25,
+      "tipo": "FLOR",
+      "configuracion_floral": {
+        "num_fichas_perimetro": 6,
+        "tiene_ficha_central": false,
+        "posicion_respuesta": "centro"
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 5,
+          "inferior": 2,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": -135
+          }
+        },
+        {
+          "posicion": 2,
+          "superior": 4,
+          "inferior": 6,
+          "rotacion": 55,
+          "coordenadas": {
+            "x": 105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": 3,
+          "superior": 5,
+          "inferior": 2,
+          "rotacion": 125,
+          "coordenadas": {
+            "x": 105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 4,
+          "superior": 5,
+          "inferior": 2,
+          "rotacion": -125,
+          "coordenadas": {
+            "x": -105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 5,
+          "superior": 4,
+          "inferior": 6,
+          "rotacion": -55,
+          "coordenadas": {
+            "x": -105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": 140
+          }
+        }
+      ],
+      "respuesta": [6, 4]
+    },
+    {
+      "numero": 26,
+      "tipo": "FLOR",
+      "configuracion_floral": {
+        "num_fichas_perimetro": 6,
+        "tiene_ficha_central": false,
+        "posicion_respuesta": "centro"
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 0,
+          "inferior": 6,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": -135
+          }
+        },
+        {
+          "posicion": 2,
+          "superior": 0,
+          "inferior": 5,
+          "rotacion": 55,
+          "coordenadas": {
+            "x": 105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": 3,
+          "superior": 0,
+          "inferior": 4,
+          "rotacion": 125,
+          "coordenadas": {
+            "x": 105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 4,
+          "superior": 0,
+          "inferior": 2,
+          "rotacion": -125,
+          "coordenadas": {
+            "x": -105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 5,
+          "superior": 0,
+          "inferior": 1,
+          "rotacion": -55,
+          "coordenadas": {
+            "x": -105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": 140
+          }
+        }
+      ],
+      "respuesta": [3, 0]
+    },
+    {
+      "numero": 27,
+      "tipo": "FLOR",
+      "configuracion_floral": {
+        "num_fichas_perimetro": 6,
+        "tiene_ficha_central": false,
+        "posicion_respuesta": "centro"
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 6,
+          "inferior": 2,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": -135
+          }
+        },
+        {
+          "posicion": 2,
+          "superior": 6,
+          "inferior": 3,
+          "rotacion": 55,
+          "coordenadas": {
+            "x": 105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": 3,
+          "superior": 5,
+          "inferior": 3,
+          "rotacion": 125,
+          "coordenadas": {
+            "x": 105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 4,
+          "superior": 4,
+          "inferior": 1,
+          "rotacion": -125,
+          "coordenadas": {
+            "x": -105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 5,
+          "superior": 4,
+          "inferior": 2,
+          "rotacion": -55,
+          "coordenadas": {
+            "x": -105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": 140
+          }
+        }
+      ],
+      "respuesta": [1, 5]
+    },
+    {
+      "numero": 28,
+      "tipo": "FLOR",
+      "configuracion_floral": {
+        "num_fichas_perimetro": 5,
+        "tiene_ficha_central": false,
+        "posicion_respuesta": "centro"
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 6,
+          "inferior": 1,
+          "rotacion": -40,
+          "coordenadas": {
+            "x": -80,
+            "y": -90
+          }
+        },
+        {
+          "posicion": 2,
+          "superior": 3,
+          "inferior": 6,
+          "rotacion": 40,
+          "coordenadas": {
+            "x": 80,
+            "y": -90
+          }
+        },
+        {
+          "posicion": 3,
+          "superior": 2,
+          "inferior": 3,
+          "rotacion": 105,
+          "coordenadas": {
+            "x": 125,
+            "y": 50
+          }
+        },
+        {
+          "posicion": 4,
+          "superior": 1,
+          "inferior": 4,
+          "rotacion": -105,
+          "coordenadas": {
+            "x": -125,
+            "y": 50
+          }
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": 140
+          }
+        }
+      ],
+      "respuesta": [2, 4]
+    },
+    {
+      "numero": 29,
+      "tipo": "FLOR",
+      "configuracion_floral": {
+        "num_fichas_perimetro": 7,
+        "tiene_ficha_central": false,
+        "posicion_respuesta": "centro"
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 1,
+          "inferior": 4,
+          "rotacion": -25,
+          "coordenadas": {
+            "x": -70,
+            "y": -145
+          }
+        },
+        {
+          "posicion": 2,
+          "superior": 4,
+          "inferior": 0,
+          "rotacion": 25,
+          "coordenadas": {
+            "x": 70,
+            "y": -145
+          }
+        },
+        {
+          "posicion": 3,
+          "superior": 2,
+          "inferior": 6,
+          "rotacion": 90,
+          "coordenadas": {
+            "x": 155,
+            "y": -25
+          }
+        },
+        {
+          "posicion": 4,
+          "superior": 6,
+          "inferior": 1,
+          "rotacion": 145,
+          "coordenadas": {
+            "x": 100,
+            "y": 95
+          }
+        },
+        {
+          "posicion": 5,
+          "superior": 3,
+          "inferior": 2,
+          "rotacion": -145,
+          "coordenadas": {
+            "x": -100,
+            "y": 95
+          }
+        },
+        {
+          "posicion": 6,
+          "superior": 0,
+          "inferior": 3,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -155,
+            "y": -25
+          }
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": 140
+          }
+        }
+      ],
+      "respuesta": [5, 5]
+    },
+    {
+      "numero": 30,
+      "tipo": "FLOR",
+      "configuracion_floral": {
+        "num_fichas_perimetro": 6,
+        "tiene_ficha_central": false,
+        "posicion_respuesta": "centro"
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 0,
+          "inferior": 3,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": -135
+          }
+        },
+        {
+          "posicion": 2,
+          "superior": 4,
+          "inferior": 0,
+          "rotacion": 55,
+          "coordenadas": {
+            "x": 105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": 3,
+          "superior": 3,
+          "inferior": 5,
+          "rotacion": 125,
+          "coordenadas": {
+            "x": 105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 4,
+          "superior": 2,
+          "inferior": 6,
+          "rotacion": -125,
+          "coordenadas": {
+            "x": -105,
+            "y": 70
+          }
+        },
+        {
+          "posicion": 5,
+          "superior": 3,
+          "inferior": 1,
+          "rotacion": -55,
+          "coordenadas": {
+            "x": -105,
+            "y": -65
+          }
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 0,
+            "y": 140
+          }
+        }
+      ],
+      "respuesta": [3, 6]
+    },
+    {
+      "numero": 31,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 0,
+          "inferior": 1,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 2,
+          "inferior": 3,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 4,
+          "inferior": 5,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 6,
+          "inferior": 0,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 1,
+          "inferior": 2,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 3,
+          "inferior": 4,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [5, 6]
+    },
+    {
+      "numero": 32,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 4,
+          "inferior": 6,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 4,
+          "inferior": 5,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 4,
+          "inferior": 4,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 4,
+          "inferior": 3,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 4,
+          "inferior": 2,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 4,
+          "inferior": 1,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [4, 0]
+    },
+    {
+      "numero": 33,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 2,
+          "inferior": 2,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 3,
+          "inferior": 4,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 5,
+          "inferior": 5,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 6,
+          "inferior": 0,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 1,
+          "inferior": 1,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 2,
+          "inferior": 3,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [4, 4]
+    },
+    {
+      "numero": 34,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 5,
+          "inferior": 4,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 2,
+          "inferior": 1,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 6,
+          "inferior": 5,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 3,
+          "inferior": 2,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 0,
+          "inferior": 6,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 4,
+          "inferior": 3,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [1, 0]
     },
     {
       "numero": 35,
@@ -1538,6 +2454,490 @@
         }
       ],
       "respuesta": [3, 5]
+    },
+    {
+      "numero": 37,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 4,
+          "inferior": 5,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 6,
+          "inferior": 6,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 0,
+          "inferior": 1,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 2,
+          "inferior": 2,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 3,
+          "inferior": 4,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 5,
+          "inferior": 5,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [6, 0]
+    },
+    {
+      "numero": 38,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 1,
+          "inferior": 3,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 5,
+          "inferior": 0,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 2,
+          "inferior": 4,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 6,
+          "inferior": 1,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 3,
+          "inferior": 5,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 0,
+          "inferior": 2,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [4, 6]
+    },
+    {
+      "numero": 39,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 1,
+          "inferior": 3,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 4,
+          "inferior": 5,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 0,
+          "inferior": 1,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 2,
+          "inferior": 4,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 5,
+          "inferior": 6,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 1,
+          "inferior": 2,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [3, 5]
+    },
+    {
+      "numero": 40,
+      "tipo": "ESPIRAL",
+      "configuracion_espiral": {
+        "num_fichas": 6,
+        "direccion": "horario",
+        "crecimiento_progresivo": true,
+        "ficha_inicial": {
+          "tamaño": "pequeño",
+          "posicion_central": true
+        }
+      },
+      "fichas": [
+        {
+          "posicion": 1,
+          "superior": 3,
+          "inferior": 2,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 10,
+            "y": -20
+          },
+          "tamaño": {
+            "ancho": 22,
+            "alto": 50
+          },
+          "escala_puntos": 0.8
+        },
+        {
+          "posicion": 2,
+          "superior": 1,
+          "inferior": 1,
+          "rotacion": 80,
+          "coordenadas": {
+            "x": -40,
+            "y": 40
+          },
+          "tamaño": {
+            "ancho": 26,
+            "alto": 58
+          },
+          "escala_puntos": 0.85
+        },
+        {
+          "posicion": 3,
+          "superior": 0,
+          "inferior": 6,
+          "rotacion": 155,
+          "coordenadas": {
+            "x": -115,
+            "y": 5
+          },
+          "tamaño": {
+            "ancho": 32,
+            "alto": 65
+          },
+          "escala_puntos": 0.9
+        },
+        {
+          "posicion": 4,
+          "superior": 6,
+          "inferior": 5,
+          "rotacion": 220,
+          "coordenadas": {
+            "x": -110,
+            "y": -85
+          },
+          "tamaño": {
+            "ancho": 37,
+            "alto": 72
+          },
+          "escala_puntos": 0.95
+        },
+        {
+          "posicion": 5,
+          "superior": 4,
+          "inferior": 4,
+          "rotacion": -90,
+          "coordenadas": {
+            "x": -10,
+            "y": -135
+          },
+          "tamaño": {
+            "ancho": 45,
+            "alto": 90
+          },
+          "escala_puntos": 1.0
+        },
+        {
+          "posicion": 6,
+          "superior": 3,
+          "inferior": 2,
+          "rotacion": -30,
+          "coordenadas": {
+            "x": 110,
+            "y": -70
+          },
+          "tamaño": {
+            "ancho": 52,
+            "alto": 104
+          },
+          "escala_puntos": 1.05
+        },
+        {
+          "posicion": "respuesta",
+          "superior": null,
+          "inferior": null,
+          "rotacion": 0,
+          "coordenadas": {
+            "x": 120,
+            "y": 75
+          },
+          "tamaño": {
+            "ancho": 56,
+            "alto": 112
+          },
+          "escala_puntos": 1.1
+        }
+      ],
+      "respuesta": [2, 1]
     },
     {
       "numero": 41,
@@ -1834,7 +3234,7 @@
           "inferior": null
         }
       ],
-      "respuesta": [0, 5]
+      "respuesta": [2, 5]
     },
     {
       "numero": 46,
