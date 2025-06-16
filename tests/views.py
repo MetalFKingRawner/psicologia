@@ -20,9 +20,12 @@ import numpy as np
 from io import BytesIO
 import base64
 from django.views.decorators.http import require_http_methods
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 logger = logging.getLogger(__name__)
 
+@login_required
 def inicio_test_valores(request):
     #test = TestValores.objects.get(nombre="Test de Valores de Allport")
     #primera_parte = ParteTest.objects.get(test=test, tipo='PRIMERA')
@@ -39,6 +42,7 @@ def inicio_test_valores(request):
         'primera_parte': primera_parte
     })
 
+@login_required
 def inicio_segundo_test_valores(request):
     #test = TestValores.objects.get(nombre="Test de Valores de Allport")
     #segunda_parte = ParteTest.objects.get(test=test, tipo='SEGUNDA')
@@ -568,6 +572,7 @@ def generar_pdf_valores(request, resultado_id):
         return HttpResponse('Error al generar el PDF: %s' % html)
     return response
 
+@login_required
 def inicio_domino(request):
     test = get_object_or_404(TestDomino, nombre="Test de Dominó D-48")
     #test = TestDomino.objects.get(nombre="Test de Dominó D-48")
