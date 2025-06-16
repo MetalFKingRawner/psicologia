@@ -51,14 +51,14 @@
                         <a class="nav-link" href="{% url 'inicio_domino' %}">Test de dominó (D-48)</a>
                     </li>
                     {% if user.is_authenticated %}
-                        <!-- Usuario autenticado -->
+                        <!-- En el menú desplegable del usuario autenticado -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 <i class="fas fa-user-circle me-2"></i>{{ user.full_name }}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" ><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
-                                <li><a class="dropdown-item" ><i class="fas fa-cog me-2"></i>Mi Perfil</a></li>
+                                <li><a class="dropdown-item" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                                <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user me-2"></i>Mi Perfil</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li>
                                     <form action="{% url 'logout' %}" method="post" class="d-inline">
