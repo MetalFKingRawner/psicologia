@@ -30,4 +30,9 @@ urlpatterns = [
          auth_views.PasswordResetCompleteView.as_view(
              template_name='registration/password_reset_complete.html'
          ), name='password_reset_complete'),
+    
+    # Nuevas rutas para dashboard y perfil
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('profile/', views.profile_view, name='profile'),
+    path('profile/update/', views.update_profile, name='update_profile'),
 ]
