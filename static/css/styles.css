@@ -309,3 +309,73 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #dc3545 !important;
     background-color: #fff5f5;
 }
+
+/* Estilos para el dashboard y perfil */
+.avatar-initials {
+    font-weight: bold;
+    background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+}
+
+.card-hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
+
+/* Estilos para las tablas */
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* Estilos para las pestañas */
+.nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    border-bottom-color: #0d6efd;
+    color: #0d6efd;
+    background-color: transparent;
+}
+
+/* Estilos para el perfil de usuario */
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+}
+
+/* Estilos para el modal de login */
+.modal-content {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    padding: 1rem 1.5rem;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.btn-close-white {
+    filter: invert(1);
+}
