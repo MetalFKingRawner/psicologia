@@ -117,3 +117,41 @@ class CustomUserCreationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+class CustomUserChangeForm(forms.ModelForm):
+    date_of_birth = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'type': 'date', 
+                'class': 'form-control'
+            },
+            format='%Y-%m-%d'
+        ),
+        required=False
+    )
+    
+    class Meta:
+        model = CustomUser
+        fields = [
+            'full_name', 
+            'email', 
+            'date_of_birth', 
+            'gender', 
+            'institution', 
+            'education_level', 
+            'occupation'
+        ]
+        widgets = {
+            'full_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'gender': forms.Select(attrs={'class': 'form-control'}),
+            'institution': forms.TextInput(attrs={'class': 'form-control'}),
+            'education_level': forms.TextInput(attrs={'class': 'form-control'}),
+            'occupation': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Asegurar que la fecha esté en formato ISO (YYYY-MM-DD)
+        if self.instance.date_of_birth:
+            self.initial['date_of_birth'] = self.instance.date_of_birth.isoformat()
