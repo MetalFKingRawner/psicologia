@@ -30,3 +30,6 @@ def user_login(request):
     return render(request, 'login.html', {
         'next': request.GET.get('next', '')
     })
+
+def prueba_requiere_login(request):
+    return render(request, 'tests/prueba_requiere_login.html')
