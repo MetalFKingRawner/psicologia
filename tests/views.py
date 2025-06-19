@@ -15,6 +15,8 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 import os
+import matplotlib
+matplotlib.use('Agg')  # Configura el backend a Agg antes de importar pyplot
 import matplotlib.pyplot as plt
 import numpy as np
 from io import BytesIO
@@ -786,6 +788,74 @@ def resultados_domino(request, resultado_id):
     resultado = get_object_or_404(ResultadoDomino, id=resultado_id)
     return render(request, 'tests/resultados_domino.html', {'resultado': resultado})
 
+def generar_pdf_domino(request, resultado_id):
+    resultado = get_object_or_404(ResultadoDomino, id=resultado_id)
+    
+    # Generar gráfico radar
+    puntuacion = resultado.puntuacion
+    percentil = resultado.percentil
+    eficiencia = resultado.eficiencia
+    
+    # Normalizar valores para la gráfica
+    puntuacion_normalizada = (puntuacion / 48) * 100
+    percentil_normalizado = percentil  # ya está en escala 0-100
+    eficiencia_normalizada = eficiencia  # ya está en porcentaje
+    
+    labels = ['Puntuación', 'Percentil', 'Eficiencia']
+    data = [puntuacion_normalizada, percentil_normalizado, eficiencia_normalizada]
+    
+    num_vars = len(labels)
+    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
+    data += data[:1]  # Cerrar el círculo
+    angles += angles[:1]  # Cerrar los ángulos
+
+    # Crear figura y eje
+    fig, ax = plt.subplots(figsize=(8, 8), subplot_kw=dict(polar=True))
+    fig.set_facecolor('white')
+    ax.set_facecolor('#f8f9fa')
+
+    # Dibujar gráfico
+    ax.plot(angles, data, color='#3A7D7D', linewidth=2, marker='o', 
+            markersize=8, markerfacecolor='#3A7D7D', markeredgecolor='white', 
+            markeredgewidth=1.5)
+    ax.fill(angles, data, color='#3A7D7D', alpha=0.1)
+
+    # Configurar etiquetas
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(labels, fontsize=10, fontweight='bold', color='#333')
+    ax.set_yticks([0, 20, 40, 60, 80, 100])
+    ax.set_yticklabels(["0", "20", "40", "60", "80", "100"], color="gray", size=8)
+    ax.set_ylim(0, 100)
+    ax.set_title('Rendimiento en el Test de Dominó', fontsize=14, fontweight='bold', pad=20)
+    
+    # Guardar en buffer
+    buffer = BytesIO()
+    plt.savefig(buffer, format='png', bbox_inches='tight')
+    plt.close(fig)  # Cerrar la figura para liberar memoria
+    
+    # Convertir a base64
+    image_png = buffer.getvalue()
+    buffer.close()
+    grafico_base64 = base64.b64encode(image_png).decode('utf-8')
+
+    context = {
+        'resultado': resultado,
+        'grafico_base64': grafico_base64,
+        'static_path': os.path.join(settings.BASE_DIR, 'psycho_platform', 'static'),
+    }
+    
+    template_path = 'tests/reporte_domino.html'
+    template = get_template(template_path)
+    html = template.render(context)
+    
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename="reporte_domino_{resultado_id}.pdf"'
+    
+    pisa_status = pisa.CreatePDF(html, dest=response)
+    
+    if pisa_status.err:
+        return HttpResponse('Error al generar el PDF: %s' % html)
+    return response
 
 def test_view(request):
     return HttpResponse("¡Vista de prueba funciona!")
