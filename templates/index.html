@@ -5,20 +5,28 @@
 
 {% block content %}
 <!-- Sección Hero -->
-<section class="hero-section py-5 bg-primary text-white">
-    <div class="container">
+<section class="hero-section py-5 bg-primary text-white position-relative overflow-hidden">
+    <div class="position-absolute top-0 end-0 w-50 h-100 bg-accent opacity-10" style="clip-path: polygon(100% 0, 100% 100%, 0 0);"></div>
+    
+    <div class="container position-relative z-1">
         <div class="row align-items-center">
             <div class="col-lg-6 order-lg-1 order-2 text-center text-lg-start">
                 <h1 class="display-4 fw-bold mb-4">
                     Descubre tu potencial con 
                     <span class="text-accent">PsyMetrics</span>
                 </h1>
-                <p class="lead mb-4">Plataforma profesional de evaluaciones psicológicas y psicométricas</p>
-                
+                <p class="lead mb-4">Plataforma profesional de evaluaciones psicológicas y psicométricas con resultados precisos y confiables</p>
+                <a href="#evaluaciones" class="btn btn-accent btn-lg px-5 py-3 mt-3 animate__animated animate__pulse animate__infinite">
+                    Explorar Evaluaciones <i class="fas fa-arrow-right ms-2"></i>
+                </a>
             </div>
-            <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
-                <img src="{% static 'img/hero-image.jpg' %}" alt="Evaluaciones profesionales" 
-                     class="img-fluid rounded-3 shadow-lg animate__animated animate__fadeIn">
+            <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0 text-center">
+                <div class="position-relative">
+                    <img src="{% static 'img/001.jpg' %}" alt="Evaluaciones profesionales" 
+                         class="img-fluid rounded-3 shadow-lg animate__animated animate__fadeIn">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3" 
+                         style="background: linear-gradient(145deg, rgba(42,77,110,0.3), rgba(253,184,51,0.2)); z-index: 1;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -32,80 +40,99 @@
         <div class="row g-4">
             <!-- Tarjeta Psicológica -->
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 hover-shadow">
-                    <img src="{% static 'img/test-psychological.jpg' %}" 
-                         class="card-img-top" 
-                         alt="Pruebas psicológicas"
-                         style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box bg-primary text-white rounded-circle me-3">
-                                <i class="fas fa-brain fa-2x"></i>
+                <div class="card h-100 border-0 shadow-hover">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="{% static 'img/test-psychological.jpg' %}" 
+                             class="card-img-top" 
+                             alt="Pruebas psicológicas"
+                             style="height: 200px; object-fit: cover;">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <div class="icon-box bg-primary text-white rounded-circle">
+                                <i class="fas fa-user-injured fa-2x"></i>
                             </div>
-                            <h3 class="h4 mb-0">Psicológicas</h3>
                         </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h4 mb-3">Psicológicas</h3>
                         <p class="card-text text-muted">Evaluación de personalidad, inteligencia emocional y salud mental.</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 85%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tarjeta Psicológica -->
+            <!-- Tarjeta Psicométrica -->
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 hover-shadow">
-                    <img src="{% static 'img/test-psychometric.jpg' %}" 
-                         class="card-img-top" 
-                         alt="Pruebas psicométricas"
-                         style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box bg-primary text-white rounded-circle me-3">
-                                <i class="fas fa-brain fa-2x"></i>
+                <div class="card h-100 border-0 shadow-hover">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="{% static 'img/test-psychometric.jpg' %}"  
+                             class="card-img-top" 
+                             alt="Pruebas psicológicas"
+                             style="height: 200px; object-fit: cover;">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <div class="icon-box bg-primary text-white rounded-circle">
+                                <i class="fas fa-user-injured fa-2x"></i>
                             </div>
-                            <h3 class="h4 mb-0">Psicométricas</h3>
                         </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h4 mb-3">Psicométricas</h3>
                         <p class="card-text text-muted">Evaluación de habilidades, aptitudes, personalidad, rasgos conductuales y competencias clave.</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 85%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tarjeta Psicológica -->
+            <!-- Tarjeta Lógica -->
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 hover-shadow">
-                    <img src="{% static 'img/test-logic.png' %}" 
-                         class="card-img-top" 
-                         alt="Pruebas lógicas"
-                         style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box bg-primary text-white rounded-circle me-3">
-                                <i class="fas fa-brain fa-2x"></i>
+                <div class="card h-100 border-0 shadow-hover">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="{% static 'img/test-logic.png' %}"
+                             class="card-img-top" 
+                             alt="Pruebas psicológicas"
+                             style="height: 200px; object-fit: cover;">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <div class="icon-box bg-primary text-white rounded-circle">
+                                <i class="fas fa-user-injured fa-2x"></i>
                             </div>
-                            <h3 class="h4 mb-0">Lógicas</h3>
                         </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h4 mb-3">Lógicas</h3>
                         <p class="card-text text-muted">Evaluación de la capacidad para analizar información, identificar patrones y llegar a conclusiones lógicas.</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 85%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tarjeta Psicológica -->
+            <!-- Tarjeta Mecánica -->
             <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 hover-shadow">
-                    <img src="{% static 'img/test-mechanical.jpg' %}" 
-                         class="card-img-top" 
-                         alt="Pruebas mecánicas"
-                         style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box bg-primary text-white rounded-circle me-3">
-                                <i class="fas fa-brain fa-2x"></i>
+                <div class="card h-100 border-0 shadow-hover">
+                    <div class="card-img-container position-relative overflow-hidden">
+                        <img src="{% static 'img/test-mechanical.jpg' %}"
+                             class="card-img-top" 
+                             alt="Pruebas psicológicas"
+                             style="height: 200px; object-fit: cover;">
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <div class="icon-box bg-primary text-white rounded-circle">
+                                <i class="fas fa-user-injured fa-2x"></i>
                             </div>
-                            <h3 class="h4 mb-0">Mecánicas</h3>
                         </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h4 mb-3">Mecánicas</h3>
                         <p class="card-text text-muted">Evaluación de la capacidad de para comprender y aplicar principios mecánicos para resolver problemas.</p>
+                        <div class="progress mt-3" style="height: 6px;">
+                            <div class="progress-bar bg-accent" role="progressbar" style="width: 85%;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </section>
@@ -115,17 +142,49 @@
     <div class="container">
         <h2 class="text-center mb-5 display-5 fw-bold text-primary">¿Cómo funciona?</h2>
         
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="text-center p-4">
-                    <div class="step-number bg-primary text-white rounded-circle mx-auto mb-3">1</div>
+        <div class="steps-process">
+            <!-- Paso 1 -->
+            <div class="step-card">
+                <div class="step-number bg-primary text-white rounded-circle">
+                    <span>1</span>
+                </div>
+                <div class="step-content">
                     <h3 class="h4">Elige tu prueba</h3>
                     <p>Selecciona entre nuestro catálogo de evaluaciones validadas</p>
                 </div>
             </div>
             
-            <!-- Repetir para pasos 2 y 3 -->
+            <!-- Flecha de conexión -->
+            <div class="step-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
             
+            <!-- Paso 2 -->
+            <div class="step-card">
+                <div class="step-number bg-primary text-white rounded-circle">
+                    <span>2</span>
+                </div>
+                <div class="step-content">
+                    <h3 class="h4">Responde con sinceridad</h3>
+                    <p>Completa la evaluación siguiendo las instrucciones específicas</p>
+                </div>
+            </div>
+            
+            <!-- Flecha de conexión -->
+            <div class="step-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            
+            <!-- Paso 3 -->
+            <div class="step-card">
+                <div class="step-number bg-primary text-white rounded-circle">
+                    <span>3</span>
+                </div>
+                <div class="step-content">
+                    <h3 class="h4">Obtén tus resultados</h3>
+                    <p>Recibe un análisis detallado de tus resultados al instante</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
