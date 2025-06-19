@@ -312,8 +312,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Estilos para el dashboard y perfil */
 .avatar-initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
     background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+    margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Si aún no se centra perfectamente */
+.card-body.text-center .d-flex.justify-content-center {
+    width: 100%;
 }
 
 .card-hover {
@@ -378,4 +387,199 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-close-white {
     filter: invert(1);
+}
+
+/* Agregar al final del archivo */
+
+/* Efectos hover mejorados */
+.hover-effect {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-effect:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.12);
+}
+
+.shadow-hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.shadow-hover:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+/* Botón acento */
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: 600;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-accent:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    transition: all 0.6s ease;
+}
+
+.btn-accent:hover:before {
+    left: 100%;
+}
+
+.btn-accent:hover {
+    background-color: #ffc107;
+    color: var(--color-primary);
+}
+
+/* Progreso en tarjetas */
+.progress {
+    background-color: rgba(42, 77, 110, 0.1);
+    border-radius: 10px;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* Degradados y efectos */
+.card-img-container {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+}
+
+.card-img-overlay {
+    background: linear-gradient(to top, rgba(42,77,110,0.8) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-img-overlay {
+    opacity: 1;
+}
+
+/* Agregar al final de styles.css */
+.steps-process {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.step-card:hover {
+    transform: translateY(-15px);
+}
+
+.step-number {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(42, 77, 110, 0.3);
+}
+
+.step-content {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    position: relative;
+}
+
+.step-content:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white;
+}
+
+.step-arrow {
+    font-size: 2rem;
+    color: var(--color-primary);
+    opacity: 0.5;
+    position: relative;
+    top: -15px;
+    animation: pulseArrow 2s infinite;
+}
+
+/* Línea de conexión */
+.steps-process:before {
+    content: '';
+    position: absolute;
+    top: 45px;
+    left: 15%;
+    width: 70%;
+    height: 4px;
+    background: var(--color-primary);
+    z-index: 1;
+    opacity: 0.2;
+    border-radius: 2px;
+}
+
+/* Animación de flecha */
+@keyframes pulseArrow {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateX(5px);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .steps-process {
+        flex-direction: column;
+    }
+    
+    .step-card {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    
+    .step-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+        top: 0;
+    }
+    
+    .steps-process:before {
+        display: none;
+    }
 }
