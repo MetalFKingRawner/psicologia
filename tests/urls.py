@@ -18,5 +18,6 @@ urlpatterns = [
     path('test-simple/', views.test_view, name='test_simple'),
     path('domino/calcular-resultados/', views.calcular_resultados_domino, name='calcular_resultados_domino'),
     path('domino/resultados/<int:resultado_id>/', views.resultados_domino, name='resultados_domino'),
+    path('resultados/domino/<int:resultado_id>/pdf/', views.generar_pdf_domino, name='reporte_domino'),
     path('requiere-login/', prueba_requiere_login, name='prueba_requiere_login'),
 ]
